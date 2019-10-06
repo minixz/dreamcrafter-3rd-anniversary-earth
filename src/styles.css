@@ -99,14 +99,6 @@ img {
   animation-delay: 8s;
 }
 
-.backgrounds > img:nth-child(4) {
-  animation-delay: 12s;
-}
-
-.backgrounds > img:nth-child(5) {
-  animation-delay: 16s;
-}
-
 @keyframes background-lights {
   0% {
     opacity: 0;
