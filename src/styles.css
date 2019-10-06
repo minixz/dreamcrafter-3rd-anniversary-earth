@@ -1,0 +1,344 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  padding: 2px 5px;
+  border: 1px solid #fff;
+}
+
+a:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+.post-link {
+  right: 3%;
+  bottom: 7%;
+  color: #333;
+  background-color: #ccc;
+  height: 3%;
+}
+
+.post-link::after {
+  display: inline-block;
+  content: "";
+  background-image: url("./assets/images/external-link-alt-solid.svg"); /* FontAwesome icon */
+  width: 14px;
+  height: 14px;
+}
+
+.author {
+  right: 3%;
+  bottom: 3%;
+  height: 3%;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #4d286e;
+}
+
+.author:hover .author__rect {
+  fill: #fff;
+}
+
+.author a:hover {
+  fill: currentColor;
+  text-shadow: none;
+}
+
+.container {
+  width: 100vw;
+  height: 56.25vw;
+  max-height: 100vh;
+  max-width: 177.78vh;
+  min-width: 854px;
+  min-height: 480px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  perspective: 600px;
+}
+
+.backgrounds {
+  position: relative;
+}
+
+.backgrounds > img {
+  position: absolute;
+  width: 100%;
+  animation: background-lights 5s infinite linear;
+  opacity: 0;
+  user-select: none;
+}
+
+.backgrounds > img:nth-child(1) {
+  animation-delay: 0;
+}
+
+.backgrounds > img:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.backgrounds > img:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.backgrounds > img:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.backgrounds > img:nth-child(5) {
+  animation-delay: 16s;
+}
+
+@keyframes background-lights {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(0);
+  transform-style: preserve-3d;
+}
+
+.content > * {
+  position: absolute;
+}
+
+.content__clouds {
+  width: 37%;
+  height: 65%;
+  left: 32%;
+  top: 18%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateZ(-60px) scale(1) rotateZ(0);
+  animation: clouds 80s linear infinite;
+}
+
+.content__clouds > img {
+  position: absolute;
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateZ(-60px) scale(1) rotateZ(0);
+  }
+
+  50% {
+    transform: translateZ(-60px) scale(1.2) rotateZ(-180deg);
+  }
+
+  100% {
+    transform: translateZ(-60px) scale(1) rotateZ(-360deg);
+  }
+}
+
+.content__earth {
+  height: 65%;
+  left: 32%;
+  top: 18%;
+  transform: translateZ(-50px);
+  z-index: 2;
+  animation: earth 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes earth {
+  0% {
+    transform: translateZ(-50px) rotateZ(0);
+  }
+
+  100% {
+    transform: translateZ(-50px) rotateZ(360deg);
+  }
+}
+
+.content__sleepyrose {
+  width: 10%;
+  height: 49%;
+  left: 46%;
+  top: 0;
+  z-index: 2;
+  transform: translateZ(-40px) rotate(45deg);
+  transform-origin: bottom center;
+  animation: sleepyrose 50s linear infinite;
+  pointer-events: none;
+}
+
+.content__sleepyrose > img {
+  width: 100%;
+}
+
+@keyframes sleepyrose {
+  0% {
+    transform: translateZ(-40px) rotateZ(45deg);
+  }
+
+  100% {
+    transform: translateZ(-40px) rotateZ(405deg);
+  }
+}
+
+.content__asukax {
+  width: 10%;
+  height: 49%;
+  left: 46%;
+  top: 0;
+  z-index: 2;
+  transform: translateZ(-40px) rotate(-45deg);
+  transform-origin: bottom center;
+  animation: asukax 50s linear infinite;
+  pointer-events: none;
+}
+
+.content__asukax > img {
+  width: 100%;
+}
+
+@keyframes asukax {
+  0% {
+    transform: translateZ(-40px) rotateZ(-45deg);
+  }
+
+  100% {
+    transform: translateZ(-40px) rotateZ(325deg);
+  }
+}
+
+.content__text-container {
+  left: 39%;
+  top: 40%;
+  width: 20%;
+  height: 25%;
+  z-index: 2;
+}
+
+.text__content {
+  position: relative;
+  height: 100%;
+  perspective: 800px;
+}
+
+.text__content > img {
+  position: absolute;
+  height: 100%;
+}
+
+.text__layout {
+  transform: rotateY(0deg);
+  transform-origin: left 6.5%;
+  transition: 1s transform, 1s opacity;
+}
+
+.content__text-container:hover .text__layout {
+  transform: rotateX(180deg);
+  opacity: 0;
+}
+
+.content__minixz {
+  right: 4%;
+  bottom: 10%;
+  width: 100px;
+}
+
+.content__gameplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  color: white;
+  font-weight: bold;
+  border: 0;
+}
+
+.content__gameplay:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+.content__gameplay:hover p {
+  transform: scale(1.2);
+}
+
+.content__gameplay img {
+  /* height: 100%; */
+  width: 100%;
+}
+
+.content__gameplay p {
+  margin-top: 0;
+  margin-bottom: 5%;
+  user-select: none;
+}
+
+.content__gameplay--survival {
+  left: 47%;
+  top: 8%;
+  width: 5%;
+  transform: translateZ(-48px);
+  z-index: 2;
+}
+
+.content__gameplay--skyland {
+  left: 30%;
+  top: -0%;
+  width: 5%;
+  transform: rotateZ(-20deg) translateZ(-100px);
+  z-index: 1;
+}
+
+.content__gameplay--skyland > img {
+  transform: translateY(0);
+  animation: skyland 3s infinite linear;
+}
+
+@keyframes skyland {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.content__gameplay--build {
+  left: 59%;
+  top: 13%;
+  width: 5%;
+  transform: rotateZ(35deg) translateZ(-48px);
+  z-index: 2;
+}
