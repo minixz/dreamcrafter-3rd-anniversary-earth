@@ -113,6 +113,48 @@ img {
   }
 }
 
+.stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  animation-name: stars;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
+  opacity: 0;
+  background-size: 300px;
+}
+
+.stars--1 {
+  background-image: url(./assets/images/star_1.png);
+  animation-delay: 0;
+}
+
+.stars--2 {
+  background-image: url(./assets/images/star_2.png);
+  animation-delay: 3s;
+}
+
+.stars--3 {
+  background-image: url(./assets/images/star_3.png);
+  animation-delay: 6s;
+}
+
+@keyframes stars {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .content {
   position: relative;
   width: 100%;
@@ -278,6 +320,25 @@ img {
 .content__text-container:hover .text__layout {
   transform: rotateX(180deg);
   opacity: 0;
+}
+
+.content__cake {
+  left: 0%;
+  top: 55%;
+  width: 5%;
+
+  transform: translateX(0) rotateZ(0);
+  animation: cake 60s linear infinite;
+}
+
+@keyframes cake {
+  0% {
+    transform: translateX(-50vw) rotateZ(0);
+  }
+
+  100% {
+    transform: translateX(150vw) rotateZ(0);
+  }
 }
 
 .content__minixz {
