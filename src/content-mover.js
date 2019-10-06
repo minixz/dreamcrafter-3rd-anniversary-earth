@@ -9,8 +9,8 @@ export function start() {
     const yPerc = (ev.clientX - windowWidth / 2) / (windowWidth / 2);
     content.style.transform = `rotateX(${xPerc * 7}deg) rotateY(${yPerc * 10}deg)`;
 
-    stars.forEach((star) => {
-      star.style.backgroundPosition = `${yPerc * 28}px ${-xPerc * 40}px`;
-    });
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].style.backgroundPosition = `${yPerc * 28}px ${-xPerc * 40}px`;
+    }
   });
 }
