@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = new Koa();
-app.use(mount('/dreamcrafter-3rd-anniversary', serve(path.join(__dirname, 'docs'))));
+app.use(mount('/dreamcrafter-3rd-anniversary-earth', serve(path.join(__dirname, 'docs'))));
 
 http2
   .createSecureServer(

@@ -11,7 +11,7 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'docs'),
-    publicPath: process.env.NODE_ENV === 'development' ? '/' : '/dreamcrafter-3rd-anniversary/',
+    publicPath: process.env.NODE_ENV === 'development' ? '/' : '/dreamcrafter-3rd-anniversary-earth/',
   },
   module: {
     rules: [
