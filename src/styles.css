@@ -121,8 +121,31 @@ img {
   transform-style: preserve-3d;
 }
 
-.content > * {
+.content > *,
+.content__objects > * {
   position: absolute;
+}
+
+.content__objects {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+    transform: scale(0.5);
+  animation: start-scene 2s 0.5s forwards 1;
+}
+
+@keyframes start-scene {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
 }
 
 .content__clouds {
@@ -227,11 +250,12 @@ img {
 }
 
 .content__text-container {
-  left: 39%;
-  top: 40%;
-  width: 20%;
-  height: 25%;
+  left: 41%;
+  top: 41%;
+  width: 19%;
+  height: 19%;
   z-index: 2;
+  transform: translateZ(150px);
 }
 
 .text__content {
