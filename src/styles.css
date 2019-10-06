@@ -245,7 +245,7 @@ img {
   }
 
   100% {
-    transform: translateZ(-40px) rotateZ(325deg);
+    transform: translateZ(-40px) rotateZ(315deg);
   }
 }
 
